@@ -1,0 +1,216 @@
+openapi: 3.0.1
+info:
+  description: "Schedule Project"
+  version: "1.0.0"
+  title: "Schedule Notebook Project"
+servers:
+  - url: 'http://localhost:5000'
+tags:
+- name: "Contacts"
+  description: "Schedule Notebook Contacts"
+paths:
+  /contact:
+    post:
+      tags:
+      - "Contacts"
+      summary: "Add a new contact to the schedule"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: 'Mateus Rangel'
+              email: 'Mateus.rangel@gmail.com'
+              cellphone: '21999999999'
+              instagram: '@Mateus'
+              zipCode: '21042760'
+              address: 'Rua 17 de Fevereiro'
+              addressNumber: '156'
+              district: 'Maré'
+              state: 'Rio de Janeiro'
+      responses:
+        '201':
+          description: "Contact created"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+    get:
+      tags:
+      - "Contacts"
+      summary: "Get all the contacts"
+      parameters: 
+      - name: order
+        in: query
+        description: Page ordenation
+        required: true
+        schema:
+          type : string
+          example: "asc"
+          enum: ['asc', 'date', 'like']
+      responses:
+        '200':
+          description: "Contact"
+          content:
+            application/json:
+              example:
+                - fav: true
+                  id: 'a0f82e4c-4bdc-4ced-b444-a0ba3089d51e'
+                  name: 'Gabriel Koppe'
+                - fav: false
+                  id: '6cc7c24e-b8fc-4572-bbe5-1fa7c103afce'
+                  name: 'Neiva Valéria'
+                - fav: true
+                  id: '63cfe86e-e77a-458d-9c2a-8f98ff2f14f2'
+                  name: 'Raquel Racine'
+                - fav: false
+                  id: 'fcb5e0de-63f3-4cf7-a86d-aaccb7c302be'
+                  name: 'Ronaldo Cesar'
+                - fav: false
+                  id: '4ae4b2a6-1a44-4318-8e9d-e50672be6882'
+                  name: 'Ronaldo Koppe'
+                
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+  /contact/{id}:
+    get:
+      tags:
+      - "Contacts"
+      summary: "Get contact with id"
+      parameters: 
+      - name: id
+        in: path
+        description: Contact id
+        required: true
+        schema:
+          type : string
+          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+      responses:
+        '200':
+          description: "Contact"
+          content:
+            application/json:
+              example:
+                address: 'Av. Claudio Besserman Vianna'
+                addressNumber: '12'
+                cellphone: '21997210496'
+                creationDate: 'Sun, 17 Oct 2021 22:06:35 GMT'
+                district: 'Jacarepaguá'
+                email: 'gabriel.koppe@gmail.com'
+                fav: true
+                id: 'a0f82e4c-4bdc-4ced-b444-a0ba3089d51e'
+                instagram: '@gab_koppe'
+                lat: '-22.971407'
+                long: '-43.3564925'
+                name: 'Gabriel Koppe'
+                state: 'Rio de Janeiro'
+                zipCode: '22775036'
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+    put:
+      tags:
+      - "Contacts"
+      summary: "Updated contact with id"
+      parameters: 
+      - name: id
+        in: path
+        description: Contact id
+        required: true
+        schema:
+          type : string
+          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: 'Mateus Rangel'
+              email: 'Mateus.rangel@gmail.com'
+              cellphone: '21999999999'
+              instagram: '@Mateus'
+              zipCode: '21042760'
+              address: 'Rua 17 de Fevereiro'
+              addressNumber: '156'
+              district: 'Maré'
+              state: 'Rio de Janeiro'
+      responses:
+        '200':
+          description: "Contact updated"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+    delete:
+      tags:
+      - "Contacts"
+      summary: "Deleted contact with id"
+      parameters: 
+      - name: id
+        in: path
+        description: Contact id
+        required: true
+        schema:
+          type : string
+          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+      responses:
+        '200':
+          description: "Contact deleted"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+  /contact/fav/{id}:
+    put:
+      tags:
+      - "Contacts"
+      summary: "Change contact's 'fav' label"
+      parameters:
+      - name: id
+        in: path
+        description: Contact id
+        required: true
+        schema:
+          type : string
+          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+      - name: fav
+        in: query
+        description: New contact label
+        required: true
+        schema:
+          type : boolean
+          example: false
+      responses:
+        '201':
+          description: "Contact created"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"

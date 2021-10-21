@@ -1,0 +1,5 @@
+db_name = 'schedule_project_database'
+db_user = 'db_Admin'
+db_password = 'db_Admin'
+db_host = 'localhost'
+db_port = '5432'
