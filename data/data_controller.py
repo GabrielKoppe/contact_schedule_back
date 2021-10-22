@@ -46,7 +46,6 @@ def execute_read_query(query):
     except OperationalError as e:
         print(f"The error '{e}' occurred")
 
-select_users = "SELECT * FROM contact"
 #users = execute_read_query(select_users)
 ##
 #for user in users:
