@@ -1,18 +1,21 @@
 import psycopg2
 from psycopg2 import OperationalError
 from psycopg2.extras import RealDictCursor
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 #import data_secret
 
 def create_connection():
     connection = None
     try:
         connection = psycopg2.connect(
-            database='schedule_project_database',
-            user='db_Admin',
-            password='db_Admin',
-            host='localhost',
-            port='5432',
+            database=os.environ.get("DATABASE_DB"),
+            user=os.environ.get("USER_DB"),
+            password=os.environ.get("PASSWORD_DB"),
+            host=os.environ.get("HOST_DB"),
+            port=os.environ.get("PORT_DB"),
         )
         print("Connection to PostgreSQL DB successful")
     except OperationalError as e:

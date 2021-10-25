@@ -1,12 +1,16 @@
 from flask import Flask, Response, Blueprint
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
 
 from api.contact import contact
 from api.user import user
 
+load_dotenv()
+
 # Create the application instance
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'CONTACT'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 CORS(app)
 
 # Create a URL route in our application for "/"

@@ -49,15 +49,15 @@ def get(current_name, current_id):
         if order_type == 'asc':
             order = "ORDER by name asc"
         elif order_type == 'date':
-            order = '''ORDER by "creationDate"'''
+            order = '''ORDER by creation_date'''
         elif order_type == 'like':
             order = '''ORDER by fav desc'''
         else:
             order = ''
 
         #Set query SQL
-        query = f'''SELECT id, name, fav FROM contact WHERE user_id = '{current_id}' {order}; '''
-        print(query)
+        query = f'''SELECT id, name, fav FROM contacts WHERE user_id = '{current_id}' {order}; '''
+
         #Execute SQL
         contact_list = execute_read_query(query)
 
@@ -72,7 +72,7 @@ def get(current_name, current_id):
 @jwt_required
 def get_by_id(current_name, current_id, id_busca):
     try:
-        query = f"SELECT * FROM contact WHERE id='{id_busca}' AND user_id = '{current_id}'"
+        query = f"SELECT * FROM contacts WHERE id='{id_busca}' AND user_id = '{current_id}'"
 
         #Execute SQL
         contact_list = execute_read_query(query)
@@ -95,7 +95,7 @@ def update_(current_name, current_id, id_busca):
     try:
         #Set query SQL
         query = put_json_to_query(body, id_busca, current_id)
-
+        
         #Execute SQL
         execute_query(query)
 
@@ -128,7 +128,7 @@ def post_fav(current_name, current_id, id_busca):
         fav = request.args.get('fav')
 
         #SQL Ajust
-        query = f"UPDATE contact SET fav={fav} WHERE id='{id_busca}' AND user_id='{current_id}'"
+        query = f"UPDATE contacts SET fav={fav} WHERE id='{id_busca}' AND user_id='{current_id}'"
 
         #Execute SQL
         execute_query(query)

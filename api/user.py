@@ -31,10 +31,10 @@ def add_new():
 
         try:
             #400 User create
-            execute_read_query(f'''SELECT name FROM "user" Where name = '{body["name"].lower()}';''')[0]
+            execute_read_query(f'''SELECT name FROM users Where name = '{body["name"].lower()}';''')[0]
             return jsonify({"error": "User has already been created"}), 400
         except:
-            query = f'''INSERT INTO "user" (id, name, password) VALUES ('{body['id']}', '{body['name']}', '{body['password']}');'''
+            query = f'''INSERT INTO users (id, name, password) VALUES ('{body['id']}', '{body['name']}', '{body['password']}');'''
 
             execute_query(query)
 
@@ -56,7 +56,7 @@ def get_login():
         if body["password"] == '': return jsonify({"error": "Password was not passed"}), 400
         
         try:
-            user = execute_read_query(f'''SELECT * FROM "user" Where name = '{body["name"].lower()}';''')[0]
+            user = execute_read_query(f'''SELECT * FROM users Where name = '{body["name"].lower()}';''')[0]
         except:
             return jsonify({"error": "Usuario não encontrado"}), 400
 
