@@ -1,4 +1,4 @@
-from flask import Flask, request, Response, Blueprint, jsonify
+from flask import request, Response, Blueprint, jsonify
 import json
 import uuid
 
@@ -14,18 +14,32 @@ def add_new():
     try:
         body = request.get_json()
         
+        #Set id
         body["id"] = uuid.uuid4()
-        body["password"] = cod_senha(body["password"]).decode('utf8')
-        body["name"] = body["name"].lower()
 
-        query = f'''INSERT INTO "user" (id, name, password) VALUES ('{body['id']}', '{body['name']}', '{body['password']}');'''
-        print(query)
+        #Set Name
+        if body["name"] != '':
+            body["name"] = body["name"].lower()
+        else:
+            return jsonify({"error": "User was not passed"}), 400
 
-        execute_query(query)
+        #Set Password
+        if body["password"] != '':
+            body["password"] = cod_senha(body["password"]).decode('utf8')
+        else:
+            return jsonify({"error": "Password was not passed"}), 400
 
-        return Response (json.dumps("Success!"), mimetype="application/json", status=200)
+        try:
+            #400 User create
+            execute_read_query(f'''SELECT name FROM "user" Where name = '{body["name"].lower()}';''')[0]
+            return jsonify({"error": "User has already been created"}), 400
+        except:
+            query = f'''INSERT INTO "user" (id, name, password) VALUES ('{body['id']}', '{body['name']}', '{body['password']}');'''
+
+            execute_query(query)
+
+            return Response (status=201)
     except Exception as ex:
-        print(str(ex))
         return jsonify ({"error": str(ex)}), 500
 
 
@@ -34,10 +48,16 @@ def add_new():
 def get_login():
     try:
         body = request.get_json()
+        
+        #Set Name
+        if body["name"] == '': return jsonify({"error": "User was not passed"}), 400
 
-        user = execute_read_query(f'''SELECT * FROM "user" Where name = '{body["name"].lower()}';''')[0]
-
-        if user['password'] == -1:
+        #Set Password
+        if body["password"] == '': return jsonify({"error": "Password was not passed"}), 400
+        
+        try:
+            user = execute_read_query(f'''SELECT * FROM "user" Where name = '{body["name"].lower()}';''')[0]
+        except:
             return jsonify({"error": "Usuario não encontrado"}), 400
 
         if not compara_senha(user['password'], body.get('password')):
