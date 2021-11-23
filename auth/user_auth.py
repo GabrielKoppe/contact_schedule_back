@@ -1,7 +1,6 @@
 import base64
 
 def user_auth(auth):
-    print(auth)
     if "Basic" in auth:
         auth = auth.replace("Basic ","")
     auth = base64.b64decode(auth).decode('UTF-8')
