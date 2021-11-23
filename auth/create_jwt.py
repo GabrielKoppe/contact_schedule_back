@@ -8,5 +8,9 @@ def create_jwt(id, nome):
         "name": nome
     }
     token = jwt.encode(payload, current_app.config['SECRET_KEY'])
-    payload['token'] = token
-    return payload
+
+    json_token = {
+        "token": token
+    }
+
+    return json_token

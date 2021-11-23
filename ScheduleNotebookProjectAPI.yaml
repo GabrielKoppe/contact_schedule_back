@@ -3,31 +3,137 @@ info:
   description: "Schedule Project"
   version: "1.0.0"
   title: "Schedule Notebook Project"
+
 servers:
+  - url: 'https://contact-schedule-database.herokuapp.com'
+    description: Production environment
   - url: 'http://localhost:5000'
+    description: Development environment
+
 tags:
+- name: "User"
+  description: "Schedule Notebook User"
 - name: "Contacts"
   description: "Schedule Notebook Contacts"
+
 paths:
-  /contact:
+  /user:
     post:
       tags:
-      - "Contacts"
-      summary: "Add a new contact to the schedule"
+      - "User"
+      summary: "Add a new user to the schedule"
       requestBody:
         required: true
         content:
           application/json:
             example:
+              name: 'gabriel'
+              password: "123"
+      responses:
+        '201':
+          description: "Contact created"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+  /login:
+    post:
+      tags:
+      - "User"
+      summary: "Enter the schedule"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: 'gabriel'
+              password: "123"
+      responses:
+        '200':
+          description: "User return"
+          content:
+            application/json:
+              example:
+                id: "5806fafd-e891-4744-8116-06ec6d3379b4"
+                name: "gabriel"
+                token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU4MDZmYWZkLWU4OTEtNDc0NC04MTE2LTA2ZWM2ZDMzNzliNCIsIm5hbWUiOiJnYWJyaWVsIn0.Spp3ZaGee75XPoDbc2aEElU_2k2gkA7Tv6-cR7LXRGM"
+        '400':
+          description: "BadRequest"
+        '401':
+          description: "Unauthorized"
+        '404':
+          description: "NotFound"
+        '500':
+          description: "ServerError"
+  /contact:
+    post:
+      tags:
+      - "Contacts"
+      summary: "Add a new contact to the schedule"
+      security: 
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  maxLength: 255
+                  description: "Contact Name"
+                email: 
+                  type: string
+                  maxLength: 100
+                  description: "Contact Email"
+                cellphone: 
+                  type: string
+                  maxLength: 14
+                  description: "Contact Cellphone"
+                instagram: 
+                  type: string
+                  maxLength: 50
+                  description: "Contact Intagram"
+                zip_code: 
+                  type: string
+                  maxLength: 10
+                  description: "Contact Zip Code"
+                address: 
+                  type: string
+                  maxLength: 255
+                  description: "Contact Address"
+                address_number: 
+                  type: string
+                  maxLength: 30
+                  description: "Contact Address Number"
+                district: 
+                  type: string
+                  maxLength: 50
+                  description: "Contact District"
+                state:
+                  type: string
+                  maxLength: 30
+                  description: "Contact State"
+                user_id:
+                  type: string
+                  maxLength: 255
+                  description: "User id associated with the contact"
+            example:
               name: 'Mateus Rangel'
               email: 'Mateus.rangel@gmail.com'
               cellphone: '21999999999'
               instagram: '@Mateus'
-              zipCode: '21042760'
+              zip_code: '21042760'
               address: 'Rua 17 de Fevereiro'
-              addressNumber: '156'
+              address_number: '156'
               district: 'Maré'
               state: 'Rio de Janeiro'
+              user_id: "5806fafd-e891-4744-8116-06ec6d3379b4"
       responses:
         '201':
           description: "Contact created"
@@ -43,6 +149,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Get all the contacts"
+      security: 
+        - bearerAuth: []
       parameters: 
       - name: order
         in: query
@@ -57,23 +165,67 @@ paths:
           description: "Contact"
           content:
             application/json:
-              example:
-                - fav: true
-                  id: 'a0f82e4c-4bdc-4ced-b444-a0ba3089d51e'
-                  name: 'Gabriel Koppe'
-                - fav: false
-                  id: '6cc7c24e-b8fc-4572-bbe5-1fa7c103afce'
-                  name: 'Neiva Valéria'
-                - fav: true
-                  id: '63cfe86e-e77a-458d-9c2a-8f98ff2f14f2'
-                  name: 'Raquel Racine'
-                - fav: false
-                  id: 'fcb5e0de-63f3-4cf7-a86d-aaccb7c302be'
-                  name: 'Ronaldo Cesar'
-                - fav: false
-                  id: '4ae4b2a6-1a44-4318-8e9d-e50672be6882'
-                  name: 'Ronaldo Koppe'
-                
+              examples:
+                Get order asc:   
+                  value:
+                  - fav: false
+                    id: "360201c4-ec61-4d59-a021-ea3081b648a8"
+                    name: "João Marcelo"
+                  - fav: false
+                    id: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
+                    name: "Mateus Rangel"
+                  - fav: false
+                    id: "6cc7c24e-b8fc-4572-bbe5-1fa7c103afce"
+                    name: "Neiva Valeria"
+                  - fav: true
+                    id: "63cfe86e-e77a-458d-9c2a-8f98ff2f14f2"
+                    name: "Raquel Racine"
+                  - fav: false
+                    id: "fcb5e0de-63f3-4cf7-a86d-aaccb7c302be"
+                    name: "Ronaldo Cesar"
+                  - fav: false
+                    id: "4ae4b2a6-1a44-4318-8e9d-e50672be6882"
+                    name: "Ronaldo Koppe"
+                Get order date:   
+                  value:
+                  - fav: true
+                    id: "63cfe86e-e77a-458d-9c2a-8f98ff2f14f2"
+                    name: "Raquel Racine"
+                  - fav: false
+                    id: "fcb5e0de-63f3-4cf7-a86d-aaccb7c302be"
+                    name: "Ronaldo Cesar"
+                  - fav: false
+                    id: "6cc7c24e-b8fc-4572-bbe5-1fa7c103afce"
+                    name: "Neiva Valeria"
+                  - fav: false
+                    id: "4ae4b2a6-1a44-4318-8e9d-e50672be6882"
+                    name: "Ronaldo Koppe"
+                  - fav: false
+                    id: "360201c4-ec61-4d59-a021-ea3081b648a8"
+                    name: "João Marcelo"
+                  - fav: false
+                    id: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
+                    name: "Mateus Rangel"
+                Get order like:   
+                  value:
+                  - fav: true
+                    id: "63cfe86e-e77a-458d-9c2a-8f98ff2f14f2"
+                    name: "Raquel Racine"
+                  - fav: false
+                    id: "4ae4b2a6-1a44-4318-8e9d-e50672be6882"
+                    name: "Ronaldo Koppe"
+                  - fav: false
+                    id: "360201c4-ec61-4d59-a021-ea3081b648a8"
+                    name: "João Marcelo"
+                  - fav: false
+                    id: "fcb5e0de-63f3-4cf7-a86d-aaccb7c302be"
+                    name: "Ronaldo Cesar"
+                  - fav: false
+                    id: "6cc7c24e-b8fc-4572-bbe5-1fa7c103afce"
+                    name: "Neiva Valeria"
+                  - fav: false
+                    id: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
+                    name: "Mateus Rangel"
         '400':
           description: "BadRequest"
         '401':
@@ -87,6 +239,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Get contact with id"
+      security: 
+        - bearerAuth: []
       parameters: 
       - name: id
         in: path
@@ -94,27 +248,26 @@ paths:
         required: true
         schema:
           type : string
-          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+          example: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
       responses:
         '200':
           description: "Contact"
           content:
             application/json:
               example:
-                address: 'Av. Claudio Besserman Vianna'
-                addressNumber: '12'
-                cellphone: '21997210496'
-                creationDate: 'Sun, 17 Oct 2021 22:06:35 GMT'
-                district: 'Jacarepaguá'
-                email: 'gabriel.koppe@gmail.com'
-                fav: true
-                id: 'a0f82e4c-4bdc-4ced-b444-a0ba3089d51e'
-                instagram: '@gab_koppe'
-                lat: '-22.971407'
-                long: '-43.3564925'
-                name: 'Gabriel Koppe'
-                state: 'Rio de Janeiro'
-                zipCode: '22775036'
+                address: "Rua Dezessete de Fevereiro"
+                address_number: '156'
+                cellphone: "(21)99999-9999"
+                creation_date: "Tue, 26 Oct 2021 18:06:15 GMT"
+                district: "Rio de Janeiro"
+                email: "Mateus.rangel@gmail.com"
+                fav: false
+                id: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
+                instagram: '@Mateus'
+                name: "Mateus Rangel"
+                state: "Bonsucesso"
+                user_id: "5806fafd-e891-4744-8116-06ec6d3379b4"
+                zip_code: '21042760'
         '400':
           description: "BadRequest"
         '401':
@@ -127,6 +280,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Updated contact with id"
+      security: 
+        - bearerAuth: []
       parameters: 
       - name: id
         in: path
@@ -134,19 +289,62 @@ paths:
         required: true
         schema:
           type : string
-          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+          example: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
       requestBody:
         required: true
         content:
           application/json:
+            schema:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  maxLength: 255
+                  description: "Contact Name"
+                email: 
+                  type: string
+                  maxLength: 100
+                  description: "Contact Email"
+                cellphone: 
+                  type: string
+                  maxLength: 14
+                  description: "Contact Cellphone"
+                instagram: 
+                  type: string
+                  maxLength: 50
+                  description: "Contact Intagram"
+                zip_code: 
+                  type: string
+                  maxLength: 10
+                  description: "Contact Zip Code"
+                address: 
+                  type: string
+                  maxLength: 255
+                  description: "Contact Address"
+                address_number: 
+                  type: string
+                  maxLength: 30
+                  description: "Contact Address Number"
+                district: 
+                  type: string
+                  maxLength: 50
+                  description: "Contact District"
+                state:
+                  type: string
+                  maxLength: 30
+                  description: "Contact State"
+                user_id:
+                  type: string
+                  maxLength: 255
+                  description: "User id associated with the contact"
             example:
               name: 'Mateus Rangel'
               email: 'Mateus.rangel@gmail.com'
-              cellphone: '21999999999'
+              cellphone: '(21)999999999'
               instagram: '@Mateus'
-              zipCode: '21042760'
+              zip_code: '21042760'
               address: 'Rua 17 de Fevereiro'
-              addressNumber: '156'
+              address_number: '156'
               district: 'Maré'
               state: 'Rio de Janeiro'
       responses:
@@ -164,6 +362,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Deleted contact with id"
+      security: 
+        - bearerAuth: []
       parameters: 
       - name: id
         in: path
@@ -171,7 +371,7 @@ paths:
         required: true
         schema:
           type : string
-          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+          example: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
       responses:
         '200':
           description: "Contact deleted"
@@ -188,6 +388,8 @@ paths:
       tags:
       - "Contacts"
       summary: "Change contact's 'fav' label"
+      security:
+        - bearerAuth: []
       parameters:
       - name: id
         in: path
@@ -195,7 +397,7 @@ paths:
         required: true
         schema:
           type : string
-          example: "1fbec6ca-2a37-11ec-8d3d-0242ac130003"
+          example: "2c2f4afb-4991-4be3-be6b-82d59fa88c30"
       - name: fav
         in: query
         description: New contact label
@@ -214,3 +416,10 @@ paths:
           description: "NotFound"
         '500':
           description: "ServerError"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    

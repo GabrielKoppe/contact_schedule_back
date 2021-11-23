@@ -5,6 +5,7 @@ import uuid
 from data.data_controller import execute_read_query, execute_query
 from auth.passwords import compara_senha, cod_senha
 from auth.create_jwt import create_jwt
+from auth.user_auth import user_auth
 
 user = Blueprint('user', __name__)
 
@@ -12,8 +13,9 @@ user = Blueprint('user', __name__)
 @user.route('/user', methods=['POST'])
 def add_new():
     try:
-        body = request.get_json()
-        
+        auth = request.headers.get('Authorization')
+        body = user_auth(auth)
+
         #Set id
         body["id"] = uuid.uuid4()
 
@@ -47,14 +49,15 @@ def add_new():
 @user.route('/login', methods=['POST'])
 def get_login():
     try:
-        body = request.get_json()
-        
+        auth = request.headers.get('Authorization')
+        body = user_auth(auth)
+
         #Set Name
         if body["name"] == '': return jsonify({"error": "User was not passed"}), 400
 
         #Set Password
         if body["password"] == '': return jsonify({"error": "Password was not passed"}), 400
-        
+
         try:
             user = execute_read_query(f'''SELECT * FROM users Where name = '{body["name"].lower()}';''')[0]
         except:
