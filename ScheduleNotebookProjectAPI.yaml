@@ -22,13 +22,8 @@ paths:
       tags:
       - "User"
       summary: "Add a new user to the schedule"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              name: 'gabriel'
-              password: "123"
+      security: 
+        - basicAuth: []
       responses:
         '201':
           description: "Contact created"
@@ -45,21 +40,14 @@ paths:
       tags:
       - "User"
       summary: "Enter the schedule"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              name: 'gabriel'
-              password: "123"
+      security: 
+        - basicAuth: []
       responses:
         '200':
           description: "User return"
           content:
             application/json:
               example:
-                id: "5806fafd-e891-4744-8116-06ec6d3379b4"
-                name: "gabriel"
                 token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU4MDZmYWZkLWU4OTEtNDc0NC04MTE2LTA2ZWM2ZDMzNzliNCIsIm5hbWUiOiJnYWJyaWVsIn0.Spp3ZaGee75XPoDbc2aEElU_2k2gkA7Tv6-cR7LXRGM"
         '400':
           description: "BadRequest"
@@ -422,4 +410,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
     
