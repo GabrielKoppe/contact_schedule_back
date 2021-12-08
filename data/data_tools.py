@@ -24,3 +24,11 @@ def delete_json_to_query(id, user):
 	WHERE id='{id}' AND user_id='{user}';'''
 
     return query
+
+def set_json_to_query_invited(json):
+
+    query = f'''INSERT INTO public.invited
+                (nome, email, creation_date)
+                VALUES('{json['nome']}', '{json['email']}', '{json['creation_date']}');
+    '''
+    return query

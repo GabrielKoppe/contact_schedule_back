@@ -5,6 +5,7 @@ import os
 
 from api.contact import contact
 from api.user import user
+from api.invited import invited
 
 load_dotenv()
 
@@ -21,6 +22,7 @@ def hello_world():
 #Add APIs
 app.register_blueprint(contact)
 app.register_blueprint(user)
+app.register_blueprint(invited)
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
