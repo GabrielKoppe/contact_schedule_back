@@ -5,6 +5,8 @@ from controller.contact_controller import set_date
 from data.data_tools import set_json_to_query_invited
 from data.data_controller import execute_query
 
+from communicate.body import invite_email
+
 invited = Blueprint('invited', __name__)
 
 #USER LOGIN
@@ -28,7 +30,14 @@ def post_invited():
             #Execute SQL
             execute_query(query)
 
-            print(query)
+            email = invite_email(invited['email'], invited['nome'])
+
+            if email: 
+                at_email = f'''UPDATE public.invited
+                SET email_invited = true
+                WHERE email = '{invited['email']}';
+                '''
+                execute_query(at_email)
         
         #201
         return jsonify({"mensagem": "Presença confirmada!"}), 201
