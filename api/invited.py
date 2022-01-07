@@ -40,7 +40,7 @@ def post_invited():
                 execute_query(at_email)
         
         #201
-        return jsonify({"mensagem": "Presença confirmada!"}), 201
+        return jsonify({"mensagem": "Obrigado! Vamos enviar um e-mail confirmando sua presença."}), 201
 
     except Exception as ex:
         #500

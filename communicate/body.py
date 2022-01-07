@@ -103,10 +103,10 @@ a[x-apple-data-detectors='true'] {{
     <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #e7e7e7;"><![endif]-->
     
 
-<div class="u-row-container" style="padding: 0px;background-color: transparent">
+<div class="u-row-container" style="padding: 0px;background-color: #ffffff">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
       
 <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
@@ -122,7 +122,7 @@ a[x-apple-data-detectors='true'] {{
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="cid:image2" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 500px;" width="500"/>
+      <img align="center" border="0" src="https://s3.amazonaws.com/unroll-images-production/projects%2F0%2F1641425810646-888309.jpg" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 500px;" width="500"/>
       
     </td>
   </tr>
@@ -164,10 +164,10 @@ a[x-apple-data-detectors='true'] {{
 
 
 
-<div class="u-row-container" style="padding: 0px;background-color: transparent">
+<div class="u-row-container" style="padding: 0px;background-color: #ffffff">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
       
 <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
@@ -181,10 +181,12 @@ a[x-apple-data-detectors='true'] {{
         
   <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
     <p style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 22px; line-height: 30.8px;">Ol&aacute; {nome},</span></p>
-<p dir="ltr" style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 20px; line-height: 28px;">Obrigado por confirmar sua presen&ccedil;a nesse dia que ser&aacute; t&atilde;o especial para n&oacute;s, &eacute; um prazer ter voc&ecirc; com a gente.</span></p>
-<p dir="ltr" style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 20px; line-height: 28px;">Todas as informa&ccedil;&otilde;es do casamento se encontram no<span style="color: #000000; font-size: 20px; line-height: 28px;"> </span><span style="color: #000000; line-height: 28px; font-size: 20px;"><a rel="noopener" href="https://gabrieleraquel.herokuapp.com/" target="_blank"><span style="color: #000000; font-size: 20px; line-height: 28px;">site</span></a></span> e qualquer duvida pode nos responder esse e-mail.</span></p>
-<p style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 20px; line-height: 28px;">Aproveite para ir entrando no clima e escute nossa playlist do casamento no Spotify.</span></p>
 <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
+<p dir="ltr" style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 18px; line-height: 25.2px;">Obrigado por confirmar sua presen&ccedil;a nesse dia que ser&aacute; t&atilde;o especial para n&oacute;s, &eacute; um prazer ter voc&ecirc; com a gente.</span></p>
+<p style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 18px; line-height: 25.2px;">Todas as informa&ccedil;&otilde;es do casamento se encontram no <span style="font-size: 18px; line-height: 25.2px; color: #000000;"><span style="font-size: 18px; line-height: 25.2px;"><span style="font-size: 18px; line-height: 25.2px;"><a rel="noopener" href="https://gabrieleraquel.herokuapp.com/" target="_blank">site </a></span></span></span>e qualquer duvida pode nos responder esse e-mail.</span></p>
+<p style="font-size: 14px; line-height: 140%;"><span style="font-family: helvetica, sans-serif; font-size: 18px; line-height: 25.2px;">Aproveite para ir entrando no clima e escute nossa playlist do casamento no Spotify.</span></p>
+<p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
+<p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="font-family: helvetica, sans-serif; font-size: 18px; line-height: 25.2px;">Gabriel e Raquel</span></p>
   </div>
 
       </td>
@@ -203,10 +205,10 @@ a[x-apple-data-detectors='true'] {{
 
 
 
-<div class="u-row-container" style="padding: 0px;background-color: transparent">
+<div class="u-row-container" style="padding: 0px;background-color: #ffffff">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
       
 <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
@@ -216,18 +218,18 @@ a[x-apple-data-detectors='true'] {{
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:arial,helvetica,sans-serif;" align="left">
         
 <div align="center">
-  <div style="display: table; max-width:36px;">
-  <!--[if (mso)|(IE)]><table width="36" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse;" align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:36px;"><tr><![endif]-->
+  <div style="display: table; max-width:42px;">
+  <!--[if (mso)|(IE)]><table width="42" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse;" align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:42px;"><tr><![endif]-->
   
     
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 0px;" valign="top"><![endif]-->
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
         <a href="https://open.spotify.com/playlist/2FYxETIC9IR21oN6SUEMtg?si=fdcd994b283b4835" title="Spotify" target="_blank">
-          <img src="cid:image3" alt="Spotify" title="Spotify" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/spotify.png" alt="Spotify" title="Spotify" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
     </tbody></table>
@@ -254,10 +256,10 @@ a[x-apple-data-detectors='true'] {{
 
 
 
-<div class="u-row-container" style="padding: 0px;background-color: transparent">
+<div class="u-row-container" style="padding: 0px;background-color: #ffffff">
   <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
       
 <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
@@ -293,7 +295,7 @@ a[x-apple-data-detectors='true'] {{
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="cid:image1" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 500px;" width="500"/>
+      <img align="center" border="0" src="https://s3.amazonaws.com/unroll-images-production/projects%2F0%2F1641426740264-721512.jpg" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 500px;" width="500"/>
       
     </td>
   </tr>
