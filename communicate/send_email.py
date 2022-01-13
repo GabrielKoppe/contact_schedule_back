@@ -1,13 +1,17 @@
 import smtplib, ssl
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+#import data_secret
 
-def post(to_email, message):
+def post(to_email, ):
     
     msg = MIMEMultipart("alternative")
     
-    password = "gr250397"
+    password = os.environ.get("EMAIL_PASSWORD")
     msg["Subject"] = "Presença confirmada!"
     msg["From"] = "casamento.gab.quel@gmail.com"
 
@@ -44,9 +48,9 @@ def post(to_email, message):
 
         # send the message via the server.
         server.sendmail(msg['From'], to_email, msg.as_string())
+        
+        server.quit()
+        return True
     except:
         server.quit()    
-        return True
-    else:    
-        server.quit()
         return False
