@@ -31,7 +31,7 @@ def post_invited():
             #Execute SQL
             execute_query(query)
 
-            email = invite_email(invited['email'], invited['nome'])
+            email = invite_email(invited['email'].lower(), invited['nome'])
 
             if email: 
                 at_email = f'''UPDATE public.invited
