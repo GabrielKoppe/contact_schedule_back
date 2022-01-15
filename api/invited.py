@@ -52,7 +52,7 @@ def post_invited():
 def get_data():
     try:
         #Set query SQL
-        query = f'''SELECT nome, email, email_invited, TO_CHAR(creation_date, 'YYYY-MM-DD') as creation_date FROM public.invited'''
+        query = f'''SELECT nome, email, email_invited, TO_CHAR(creation_date, 'YYYY-MM-DD HH:MI') as creation_date FROM public.invited'''
 
         #Execute SQL
         data_list = execute_read_query(query)
