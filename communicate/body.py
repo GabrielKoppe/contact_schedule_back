@@ -87,7 +87,7 @@ a[x-apple-data-detectors] {{
                   <td valign="top" align="center" style="padding:0;Margin:0;width:560px"> 
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                      <tr> 
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="images/image1_B4H.jpeg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560" height="244"></td> 
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://raw.githubusercontent.com/GabrielKoppe/contact_schedule_back/master/images/image1_B4H.jpeg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560" height="244"></td> 
                      </tr> 
                      <tr> 
                       <td align="center" style="padding:10px;Margin:0;font-size:0"> 
@@ -174,7 +174,7 @@ a[x-apple-data-detectors] {{
                        </table></td> 
                      </tr> 
                      <tr> 
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="images/image2_NbL.jpeg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560" height="268"></td> 
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://raw.githubusercontent.com/GabrielKoppe/contact_schedule_back/master/images/image2_NbL.jpeg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560" height="268"></td> 
                      </tr> 
                    </table></td> 
                  </tr> 
